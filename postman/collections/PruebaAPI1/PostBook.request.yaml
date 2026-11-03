@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/users/1/events/1/book?note
+method: POST
+queryParams:
+  note: null
+body:
+  type: formdata
+  content:
+    - type: text
+      key: note
+      value: Asisto seguro
+      description: ""
+      disabled: false
+order: 4000

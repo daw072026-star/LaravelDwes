@@ -1,0 +1,165 @@
+import { writeFileSync, statSync } from 'fs';
+
+const collection = {
+  info: {
+    _postman_id: '35f7Efb599b6FC264b6B5ebb',
+    name: 'PruebaAPI1',
+    schema: 'https://schema.getpostman.com/json/collection/v2.1.0/collection.json'
+  },
+  item: [
+    {
+      name: 'Post register',
+      request: {
+        method: 'POST',
+        header: [],
+        body: {
+          mode: 'formdata',
+          formdata: [
+            { key: 'name', value: 'Maria', type: 'text' },
+            { key: 'email', value: 'm@gmail.com', type: 'text' },
+            { key: 'password', value: '12345678', type: 'text' },
+            { key: 'c_password', value: '12345678', type: 'text' }
+          ]
+        },
+        url: {
+          raw: 'http://127.0.0.1:8000/api/register',
+          protocol: 'http',
+          host: ['127', '0', '0', '1'],
+          port: '8000',
+          path: ['api', 'register']
+        }
+      },
+      response: []
+    },
+    {
+      name: 'Show user',
+      request: {
+        method: 'GET',
+        header: [],
+        url: {
+          raw: 'http://127.0.0.1:8000/api/user/2',
+          protocol: 'http',
+          host: ['127', '0', '0', '1'],
+          port: '8000',
+          path: ['api', 'user', '2']
+        }
+      },
+      response: []
+    },
+    {
+      name: 'Add adress',
+      request: {
+        method: 'POST',
+        header: [],
+        body: {
+          mode: 'formdata',
+          formdata: [
+            { key: 'country', value: 'Spain', type: 'text' },
+            { key: 'zipcode', value: '26580', type: 'text' },
+            { key: 'email', value: 'j@gmail.com', type: 'text' }
+          ]
+        },
+        url: {
+          raw: 'http://127.0.0.1:8000/api/address',
+          protocol: 'http',
+          host: ['127', '0', '0', '1'],
+          port: '8000',
+          path: ['api', 'address']
+        }
+      },
+      response: []
+    },
+    {
+      name: 'PostBook',
+      request: {
+        method: 'POST',
+        header: [],
+        body: {
+          mode: 'formdata',
+          formdata: [
+            { key: 'note', value: 'Asisto seguro', type: 'text' }
+          ]
+        },
+        url: {
+          raw: 'http://127.0.0.1:8000/api/users/1/events/1/book?note',
+          protocol: 'http',
+          host: ['127', '0', '0', '1'],
+          port: '8000',
+          path: ['api', 'users', '1', 'events', '1', 'book'],
+          query: [{ key: 'note', value: null }]
+        }
+      },
+      response: []
+    },
+    {
+      name: 'BookEvents',
+      request: {
+        method: 'POST',
+        header: [],
+        body: {
+          mode: 'formdata',
+          formdata: [
+            { key: 'note', value: 'Voy con mi amigo', type: 'text' }
+          ]
+        },
+        url: {
+          raw: 'http://127.0.0.1:8000/api/user/1/event/1/book',
+          protocol: 'http',
+          host: ['127', '0', '0', '1'],
+          port: '8000',
+          path: ['api', 'user', '1', 'event', '1', 'book']
+        }
+      },
+      response: []
+    },
+    {
+      name: 'List user',
+      request: {
+        method: 'GET',
+        header: [],
+        url: {
+          raw: 'http://127.0.0.1:8000/api/event/1/user',
+          protocol: 'http',
+          host: ['127', '0', '0', '1'],
+          port: '8000',
+          path: ['api', 'event', '1', 'user']
+        }
+      },
+      response: []
+    },
+    {
+      name: 'List TypeEvents',
+      request: {
+        method: 'GET',
+        header: [],
+        url: {
+          raw: 'http://127.0.0.1:8000/api/type/1',
+          protocol: 'http',
+          host: ['127', '0', '0', '1'],
+          port: '8000',
+          path: ['api', 'type', '1']
+        }
+      },
+      response: []
+    },
+    {
+      name: 'List events',
+      request: {
+        method: 'GET',
+        header: [],
+        url: {
+          raw: 'http://127.0.0.1:8000/api/user/1/events',
+          protocol: 'http',
+          host: ['127', '0', '0', '1'],
+          port: '8000',
+          path: ['api', 'user', '1', 'events']
+        }
+      },
+      response: []
+    }
+  ]
+};
+
+writeFileSync('PruebaAPI1_export.json', JSON.stringify(collection, null, 2), 'utf8');
+console.log('File written successfully');
+console.log('Size: ' + statSync('PruebaAPI1_export.json').size + ' bytes');

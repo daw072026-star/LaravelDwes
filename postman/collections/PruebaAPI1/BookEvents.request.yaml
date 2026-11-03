@@ -1,0 +1,12 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/user/1/event/1/book
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: note
+      value: Voy con mi amigo
+      description: ""
+      disabled: false
+order: 5000
